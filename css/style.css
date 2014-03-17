@@ -1,0 +1,248 @@
+@charset "utf-8";
+
+/* --------------------------------------------------------------------------------
+基本スタイル
+----------------------------------------------------------------------------------- */
+html,
+body,
+contents {
+	margin: 0;
+	padding: 0;
+}
+html {
+	width: 100%;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	background: #fff url(../img/bg.jpg);
+	background-size: 100%;
+}
+a {
+	text-decoration: none;
+}
+#contents {
+	width: 100%;
+}
+.page {
+	margin: 0;
+	padding: 20px 5px 5px 5px;
+	text-align: center;
+}
+
+	/* キラキラ */
+	.shine {
+		position: absolute;
+		width: 20%;
+		left: -3%;
+		top: -3%;
+	}
+	.shine2 {
+		position: absolute;
+		width: 16%;
+		right: 5%;
+		top: -10%;
+	}
+	.shine3 {
+		position: absolute;
+		width: 18%;
+		left: -3%;
+		top: 40%;
+	}
+	.shine4 {
+		position: absolute;
+		width: 10%;
+		left: 15%;
+		bottom: 10%;
+	}
+	.shine5 {
+		position: absolute;
+		width: 17%;
+		right: 2%;
+		bottom: 10%;
+	}
+
+
+/* 表紙 */
+#cover {
+	padding-top: 40px;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-name: bounceInUp;
+	animation-name: bounceInUp;
+}
+	.cover-back {
+		-webkit-animation-duration: 1s;
+		animation-duration: 1s;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;
+		-webkit-animation-name: bounceOutUp;
+		animation-name: bounceOutUp;
+	}
+
+
+/* 各種画面・パーツ */
+#nagesen-mode {
+	display: none;
+	overflow: hidden;
+}
+	#nagesen-mode img {
+		width: 80%;
+	}
+
+#nagesen-10yen {
+	display: none;
+	cursor: pointer;
+}
+#nagesen-100yen {
+	display: none;
+	cursor: pointer;
+}
+#nagesen-aoriyen {
+	display: none;
+	cursor: pointer;
+}
+#money {
+	display: none;
+	text-align: center;
+}
+#manual {
+	display: none;
+	position: fixed;
+	bottom: 0;
+	text-align: center;
+}
+
+
+/* PC限定 */
+@media screen and (min-width: 581px) {
+	#contents {
+		width: 580px;
+		margin: 0 auto;
+		text-align: center;
+	}
+}
+
+
+
+/* --------------------------------------------------------------------------------
+アニメーション
+----------------------------------------------------------------------------------- */
+.animated {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.animated.hinge {
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+}
+
+.bounceInUp {
+	-webkit-animation-name: bounceInUp;
+	animation-name: bounceInUp;
+}
+
+@keyframes bounceInUp,
+@-webkit-keyframes bounceInUp {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(2000px);
+		-ms-transform: translateY(2000px);
+		transform: translateY(2000px);
+	}
+
+	60% {
+		opacity: 1;
+		-webkit-transform: translateY(-30px);
+		-ms-transform: translateY(-30px);
+		transform: translateY(-30px);
+	}
+
+	80% {
+		-webkit-transform: translateY(10px);
+		-ms-transform: translateY(10px);
+		transform: translateY(10px);
+	}
+
+	100% {
+		-webkit-transform: translateY(0);
+		-ms-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+
+/* キラキラ・アニメーション */
+.shine {
+	-webkit-animation-duration: 1.8s;
+	animation-duration: 1s;
+}
+.shine2 {
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+}
+.shine3 {
+	-webkit-animation-duration: 1.2s;
+	animation-duration: 1.2s;
+}
+.shine4 {
+	-webkit-animation-duration: 1.8s;
+	animation-duration: 1.8s;
+}
+.shine5 {
+	-webkit-animation-duration: 2.2s;
+	animation-duration: 2.2s;
+}
+.shine-animation {
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-name: shineAnimation;
+	animation-name: shineAnimation;
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+}
+.shine-animation.hinge {
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+}
+@keyframes shineAnimation {
+	0% {
+		opacity: 0;
+		transform: scaleX(0,0);
+		-moz-transform: scale(0,0);
+		-webkit-transform: scale(0,0);
+	}
+	50% {
+		opacity: 1;
+		transform: scaleX(1,1);
+		-moz-transform: scale(1,1);
+		-webkit-transform: scale(1,1);
+	}
+	100% {
+		opacity: 0;
+		transform: scaleX(0,0);
+		-moz-transform: scale(0,0);
+		-webkit-transform: scale(0,0);
+	}
+}
+@-webkit-keyframes shineAnimation {
+	0% {
+		opacity: 0;
+		transform: scaleX(0,0);
+		-moz-transform: scale(0,0);
+		-webkit-transform: scale(0,0);
+	}
+	50% {
+		opacity: 1;
+		transform: scaleX(1,1);
+		-moz-transform: scale(1,1);
+		-webkit-transform: scale(1,1);
+	}
+	100% {
+		opacity: 0;
+		transform: scaleX(0,0);
+		-moz-transform: scale(0,0);
+		-webkit-transform: scale(0,0);
+	}
+}
+
